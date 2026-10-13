@@ -2,6 +2,8 @@
 
 A VS Code extension that asks [Jev](https://docs.typesafe.ai) a question about every line of code you write, then marks the line 👍 or 👎.
 
+![screenshot](https://cdn.infopanel.org/i/jev-s-code.png)
+
 The default question is **"is this ok?"**
 
 ## How it works
