@@ -1,0 +1,83 @@
+{
+  "name": "jev-s-code",
+  "displayName": "Jev's Code",
+  "description": "Asks Jev about every line you write and marks it 👍 or 👎.",
+  "version": "0.1.0",
+  "publisher": "metabase",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jev.setApiKey",
+        "title": "Jev: Set TypeSafe API Key"
+      },
+      {
+        "command": "jev.toggle",
+        "title": "Jev: Toggle Line Checks"
+      },
+      {
+        "command": "jev.evaluateLine",
+        "title": "Jev: Evaluate Current Line"
+      },
+      {
+        "command": "jev.clear",
+        "title": "Jev: Clear Verdicts"
+      }
+    ],
+    "configuration": {
+      "title": "Jev",
+      "properties": {
+        "jev.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask Jev about each line after you finish writing it."
+        },
+        "jev.prompt": {
+          "type": "string",
+          "default": "is this ok?",
+          "description": "The yes/no question Jev answers about each line. Yes shows 👍, no shows 👎."
+        },
+        "jev.threshold": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Minimum probability of \"yes\" needed for a 👍."
+        },
+        "jev.contextLines": {
+          "type": "integer",
+          "default": 5,
+          "minimum": 0,
+          "description": "Number of surrounding lines sent to Jev as context."
+        },
+        "jev.model": {
+          "type": "string",
+          "default": "jev-latest",
+          "description": "TypeSafe model to use."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.6.0"
+  }
+}
