@@ -1,4 +1,4 @@
-# Jev's Code
+# Jev-S Code
 
 A VS Code extension that asks [Jev](https://docs.typesafe.ai) a question about every line of code you write, then marks the line 👍 or 👎.
 
